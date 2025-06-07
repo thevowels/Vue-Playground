@@ -39,10 +39,15 @@ watchEffect(fetchUsers);
         <thead>
             <tr class="bg-gray-100">
             <th class="p-2 cursor-pointer" >
-                <ColumnHeader :change-sort="changeSort" :sort-direction="'desc'" value="firstName" name="firstName"/>
+                <ColumnHeader :change-sort="changeSort" :sort-direction="'asc'" value="firstName" name="firstName" :current="sortKey"/>
             </th>
-            <th class="p-2 cursor-pointer" @click="changeSort('lastName', 'asc')">Last Name</th>
-            <th class="p-2 cursor-pointer" @click="changeSort('age', 'asc')">Age</th>
+            <th class="p-2 cursor-pointer">
+                <ColumnHeader :change-sort="changeSort" :sort-direction="'asc'" value="lastName" name="lastName" :current="sortKey"/>
+
+            </th>
+            <th class="p-2 cursor-pointer">
+               <ColumnHeader :change-sort="changeSort" :sort-direction="'asc'" value="age" name="Age" :current="sortKey"/>
+            </th>
             </tr>
         </thead>
         <tbody>
